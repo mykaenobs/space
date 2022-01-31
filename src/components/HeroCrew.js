@@ -1,9 +1,6 @@
-import { Link } from 'react-router-dom'
 import styled from 'styled-components';
-import member from '../assets/crew/image-douglas-hurley.png';
 import crews from '../data.json';
 import { useEffect, useState } from 'react';
-import plants from '../data.json';
 import { importCrew } from '../libs/dynamicImport';
 
 const HeroCrew = () => {
@@ -16,7 +13,7 @@ const HeroCrew = () => {
 
   useEffect(() => {
     importCrew(person.name.toLowerCase().split(' ').join('-'), setImage);
-  }, [tab]);
+  }, [tab, person.name]);
 
   return (
     <Container>

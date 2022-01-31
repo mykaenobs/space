@@ -11,7 +11,7 @@ const HeroDestination = () => {
 
   useEffect(() => {
     importDestination(destination.name.toLowerCase(), setImage);
-  }, [tab]);
+  }, [tab, destination.name]);
 
   const tabs = (e) => setTab(e.target.dataset.tab);
 

@@ -1,10 +1,7 @@
 import styled from 'styled-components';
-import ship from '../assets/technology/image-launch-vehicle-portrait.jpg'
-import shipLandscape from '../assets/technology/image-launch-vehicle-landscape.jpg';
 import { useMediaQuery } from 'react-responsive';
 import technologies from '../data.json';
 import { useEffect, useState } from 'react';
-import plants from '../data.json';
 import { importTechnology } from '../libs/dynamicImport';
 
 
@@ -20,7 +17,7 @@ const HeroTechnology = () => {
     isTablet ?
       importTechnology(tech.name.toLowerCase().split(' ').join('-') + '-landscape', setImage):
       importTechnology(tech.name.toLowerCase().split(' ').join('-') + '-portrait', setImage);
-  }, [tab, isTablet]);
+  }, [tab, isTablet, tech.name]);
 
   const tabs = (e) => setTab(e.target.dataset.tab);
 
